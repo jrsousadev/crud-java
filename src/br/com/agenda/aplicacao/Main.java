@@ -9,11 +9,17 @@ public class Main {
     public static void main(String[] args) {
         ContatoDAO contatoDao = new ContatoDAO();
 
+        // Create Contact
         Contato contato = new Contato();
         contato.setNome("João Gabriel");
         contato.setIdade(19);
         contato.setDataCadastrado(new Date());
 
-        contatoDao.save(contato);
+
+        // Get All Contacts
+        for(Contato c : contatoDao.getContatos()) {
+            System.out.println("Contato: "+c.getNome());
+        }
+
     }
 }
